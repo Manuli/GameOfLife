@@ -18,26 +18,26 @@ public class GameOfLife extends JFrame{
      private static final int[][] CELLULA = {{1}};
 	 private static final int[][] OSCILLATORE = {{1, 1, 1}};
 	 private static final int[][] NAVICELLA = {{0, 1, 0},
-											   {0, 0, 1},
-											   {1, 1, 1}};													
+					 	   {0, 0, 1},
+						   {1, 1, 1}};													
 	 private static final int[][] ASTRONAVE = {{1, 0, 0, 1, 0},
-											   {0, 0, 0, 0, 1},
-											   {1, 0, 0, 0, 1},
-											   {0, 1, 1, 1, 1}};													
+						   {0, 0, 0, 0, 1},
+						   {1, 0, 0, 0, 1},
+						   {0, 1, 1, 1, 1}};													
 	 private static final int[][] TRIGGER = {{0, 1, 0, 0},
-											{1, 0, 0, 1},
-								            {1, 0, 0, 1},
-											{0, 0, 1, 0}};	   
+						 {1, 0, 0, 1},
+						 {1, 0, 0, 1},
+						 {0, 0, 1, 0}};	   
 	 private static final int[][] SHUTTLE = {{0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-	                                       {0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0},
-	                                       {0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-	                                       {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-	                                       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	                                       {0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0},
-	                                       {0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0},
-	                                       {0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0},
-	                                       {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
-	                                       {0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0}};
+	                                         {0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0},
+	                                         {0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+	                                         {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+	                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	                                         {0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+	                                         {0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0},
+	                                         {0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0},
+	                                         {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
+	                                         {0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0}};
 	 private static final int[][] DIAMANTE = {{0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0},
 	                                          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	                                          {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0},
@@ -48,20 +48,20 @@ public class GameOfLife extends JFrame{
 	                                          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	                                          {0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0}};
 	 private static final int[][] PULSATORE = {{0, 1, 1, 0, 1, 1, 0},
-											   {1, 0, 0, 1, 0, 0, 1},
-											   {0, 1, 1, 0, 1, 1, 0}}; 
+						   {1, 0, 0, 1, 0, 0, 1},
+						   {0, 1, 1, 0, 1, 1, 0}}; 
 	 private static final int[][] FUSIONE = {{0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
-											{1, 1, 0, 1, 1, 1, 1, 0, 1, 1},
-											{0, 0, 1, 0, 0, 0, 0, 1, 0, 0}};
+						 {1, 1, 0, 1, 1, 1, 1, 0, 1, 1},
+						 {0, 0, 1, 0, 0, 0, 0, 1, 0, 0}};
 	private static final int[][] GALASSIA = {{1, 1, 0, 1, 1, 1, 1, 1, 1},
-											 {1, 1, 0, 1, 1, 1, 1, 1, 1},
-											 {1, 1, 0, 0, 0, 0, 0, 0, 0},
-											 {1, 1, 0, 0, 0, 0, 0, 1, 1},
-											 {1, 1, 0, 0, 0, 0, 0, 1, 1},
-											 {1, 1, 0, 0, 0, 0, 0, 1, 1},
-											 {0, 0, 0, 0, 0, 0, 0, 1, 1},
-											 {1, 1, 1, 1, 1, 1, 0, 1, 1},
-											 {1, 1, 1, 1, 1, 1, 0, 1, 1}}; 
+					         {1, 1, 0, 1, 1, 1, 1, 1, 1},
+					         {1, 1, 0, 0, 0, 0, 0, 0, 0},
+						 {1, 1, 0, 0, 0, 0, 0, 1, 1},
+						 {1, 1, 0, 0, 0, 0, 0, 1, 1},
+						 {1, 1, 0, 0, 0, 0, 0, 1, 1},
+						 {0, 0, 0, 0, 0, 0, 0, 1, 1},
+						 {1, 1, 1, 1, 1, 1, 0, 1, 1},
+						 {1, 1, 1, 1, 1, 1, 0, 1, 1}}; 
 	private static final int[][] OTTAGONO = {{0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
 	                                         {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0},
 	                                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -70,7 +70,7 @@ public class GameOfLife extends JFrame{
 	                                         {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
 	                                         {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
 	                                         {1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1},
-											 {1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1},
+						 {1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1},
 	                                         {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
 	                                         {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
 	                                         {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
@@ -145,7 +145,7 @@ public class GameOfLife extends JFrame{
         cellule = new Cellula[RIGHE][COLONNE]; 
         appo = new Cellula[RIGHE][COLONNE]; 
         wdgScelta = new Widget();
-        figura = CELLULA;   // inizialmente la figura di default da inserire è una cellula
+        figura = CELLULA;   			// inizialmente la figura di default da inserire è una cellula
         generazione = 0;
         numSchiavi = n;
      }
@@ -154,7 +154,7 @@ public class GameOfLife extends JFrame{
       * Crea la matrice di cellule di dimensioni prefissate.
       */
      private void disegnaMatriceCellule(){
-        int m = 19, n = 8; // variabili usate per il posizionamento delle cellule
+        int m = 19, n = 8; 			// variabili usate per il posizionamento delle cellule
         for(int i = 0; i < RIGHE; i++){
            for(int j = 0; j < COLONNE; j++){          
               cellule[i][j] = new Cellula(i,j);
@@ -236,12 +236,12 @@ public class GameOfLife extends JFrame{
                  btnClear.setEnabled(false);
                  btnNext.setEnabled(false);
                  btnRand.setEnabled(false);
-                 start = true; // indica che � iniziata la produzione di nuove generazioni
+                 start = true; 			// indica che � iniziata la produzione di nuove generazioni
                  SchiavoStart t = new SchiavoStart();
                  t.start(); 
               }
               else{
-                   start = false; // interrompe la produzione di nuove generazioni
+                   start = false; 		// interrompe la produzione di nuove generazioni
                    btnStart.setText("START");
                    btnClear.setEnabled(true);
                    btnNext.setEnabled(true);
@@ -360,21 +360,20 @@ public class GameOfLife extends JFrame{
         public void run(){
            int nextRiga;
            int nextColonna; 
-           do{synchronized(GameOfLife.this){
-                 nextColonna = GameOfLife.this.nextColonna++;
-                 nextRiga=GameOfLife.this.nextRiga;
-                 if(!(nextColonna < COLONNE)){
-                    nextRiga = GameOfLife.this.nextRiga++;
-                    nextColonna=GameOfLife.this.nextColonna = 0;
-                 }
-              }
+           do{
+           	synchronized(GameOfLife.this){
+                   nextColonna = GameOfLife.this.nextColonna++;
+                   nextRiga=GameOfLife.this.nextRiga;
+                   if(!(nextColonna < COLONNE)){
+                      nextRiga = GameOfLife.this.nextRiga++;
+                      nextColonna=GameOfLife.this.nextColonna = 0;
+                   }
+              	}
               // non vengono verificate le cellule ai bordi per evitare di uscire dai limiti della matrice
               if(nextRiga < (RIGHE - 1) && nextColonna < (COLONNE - 1) && nextRiga > 0 && nextColonna > 0){
-                 //System.out.println("Thread "+this.nome+": sto verificando la cella ("+ nextRiga+ " , " +nextColonna+")");
                  verificaCellula(nextRiga, nextColonna);
               }
            }while(nextRiga < (RIGHE - 1) || nextColonna < (COLONNE - 1));
-           //System.out.println("Thread "+this.nome+": ho finito");
         }
      }   
      
@@ -393,7 +392,8 @@ public class GameOfLife extends JFrame{
       */
      private void waitSchiavi(){
         for (Schiavo s: schiavi)
-           try {s.join();
+           try {
+           	s.join();
            }
            catch (InterruptedException e){}
      }
